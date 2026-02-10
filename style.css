@@ -1,0 +1,107 @@
+:root {
+  --bg: #0f1220;
+  --panel: #1a2035;
+  --panel-alt: #11172a;
+  --text: #e5ebff;
+  --subtle: #a9b4d8;
+  --accent: #56d1ff;
+  --warn: #f6b949;
+  --ok: #6be38e;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1b2240 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 330px minmax(700px, 1fr);
+  gap: 16px;
+  min-height: 100vh;
+  padding: 18px;
+}
+
+.hud-panel,
+.game-panel {
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-alt) 100%);
+  border: 1px solid #2b365c;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hud-panel { padding: 18px; }
+h1 { margin: 0 0 2px; font-size: 1.7rem; }
+.subtitle { margin: 0 0 14px; color: var(--subtle); }
+
+.meter { margin-bottom: 10px; }
+.meter label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--subtle);
+  margin-bottom: 4px;
+}
+.bar {
+  height: 14px;
+  border-radius: 999px;
+  background: #273152;
+  overflow: hidden;
+  border: 1px solid #3a4875;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  transition: width 120ms linear;
+  background: linear-gradient(90deg, #5f7cff, #56d1ff);
+}
+.meter b {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--subtle);
+  margin-top: 2px;
+}
+
+.status {
+  list-style: none;
+  padding: 10px;
+  margin: 12px 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #2f3a62;
+  border-radius: 10px;
+}
+.status li { margin: 6px 0; }
+
+.controls {
+  color: var(--subtle);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.game-panel {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 12px;
+  border: 1px solid #3a4772;
+  background: #1f283f;
+}
+.message {
+  margin: 10px 0 4px;
+  color: var(--subtle);
+  min-height: 1.4rem;
+}
+
+@media (max-width: 1200px) {
+  .layout { grid-template-columns: 1fr; }
+}
