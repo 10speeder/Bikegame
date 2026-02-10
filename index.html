@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draft & Sprint: Road Racing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hud-panel">
+        <h1>Draft & Sprint</h1>
+        <p class="subtitle">Race smart: draft, hydrate, then sprint.</p>
+
+        <div class="meter"><label>Effort</label><div id="effortBar" class="bar"><span></span></div><b id="effortVal"></b></div>
+        <div class="meter"><label>Stamina</label><div id="staminaBar" class="bar"><span></span></div><b id="staminaVal"></b></div>
+        <div class="meter"><label>Sprint Strength</label><div id="sprintBar" class="bar"><span></span></div><b id="sprintVal"></b></div>
+        <div class="meter"><label>Distance</label><div id="distanceBar" class="bar"><span></span></div><b id="distanceVal"></b></div>
+
+        <ul class="status">
+          <li>Rank: <strong id="rankVal">-</strong></li>
+          <li>Zone: <strong id="zoneVal">Flat</strong></li>
+          <li>Drafting: <strong id="draftVal">No</strong></li>
+          <li>Sprint: <strong id="activeSprintVal">Off</strong></li>
+        </ul>
+
+        <p class="controls">
+          <strong>Controls</strong><br />
+          ↑/W effort up · ↓/S effort down · ←/A and →/D steer · Space sprint · R restart
+        </p>
+      </section>
+
+      <section class="game-panel">
+        <canvas id="game" width="980" height="620" aria-label="Cycling road race game"></canvas>
+        <p id="message" class="message">Stay in the draft and save your legs.</p>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
